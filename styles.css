@@ -1,0 +1,127 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Arial", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2c6e49; /* Esmeralda */
+  color: #fff; /* Blanco */
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+.map-overlay {
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.map-image {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.search-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#coordinates {
+  padding: 10px;
+  font-size: 24px;
+  border: 2px solid gold;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+  outline: none;
+  width: 400px;
+  text-align: center;
+  background-color: #1f4037; /* Esmeralda oscura */
+  color: #fff; /* Blanco */
+}
+
+.message-container {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-size: 24px;
+  text-align: center;
+}
+
+.message-container.active {
+  display: block;
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Añadir elementos mágicos y misteriosos */
+.map-image {
+  position: relative;
+  filter: brightness(0.8) contrast(1.2);
+}
+
+.map-image::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(0, 0, 0, 0) 70%
+  );
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.message {
+  font-family: "Cursive", sans-serif;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+/* Asegúrate de que el contenedor use flexbox */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Texto en la parte inferior izquierda */
+.footer-text {
+  font-size: 20px;
+  color: #fff;
+  white-space: nowrap; /* Para que todo el texto quede en una sola línea */
+  margin: 10px; /* Ajusta el margen según sea necesario */
+}
